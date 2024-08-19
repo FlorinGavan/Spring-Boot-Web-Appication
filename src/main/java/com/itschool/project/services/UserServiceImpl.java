@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
         log.info("User {} was saved!", user.getId());
 
         return user;
-
-
     }
+
 }
