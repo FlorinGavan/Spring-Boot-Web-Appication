@@ -32,4 +32,10 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    public void deleteUser(UUID id) {
+        User deleteUser = users.stream().filter(user -> user.getId().equals(id)).findFirst().orElse(null);
+        users.remove(deleteUser);
+        log.info("User {} was deleted", id);
+    }
 }
